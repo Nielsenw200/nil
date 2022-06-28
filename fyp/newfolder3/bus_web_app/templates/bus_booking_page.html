@@ -1,0 +1,111 @@
+ 
+<!DOCTYPE html>
+{% load static  %}
+<html lang= "en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
+    <title>Schedule</title>
+    z<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
+   <link  rel="stylesheet"   href="{% static 'design3.css' %}"/>
+  
+<body class="bus__page">  
+ <!--Navbar-->
+ <nav class="navbar">
+    <div class="navbar__container"> 
+    <a href="#home" id="navbar__logo">TIKETI KIGANJANI</a>  
+    <div class="navbar__toggle"  id="mobile-menu"> 
+    <span class="bar"> </span>
+    <span class="bar"> </span>
+    <span class="bar"> </span>
+    <span class="bar"> </span>
+    </div>
+    <ul class="navbar__menu">
+           <li class="navbar__item">
+            <a href="{% url 'home' %}" class="navbar__links" id="homepage">Home</a>
+           </li>
+
+           <li class="navbar__item">
+            <a href="{% url 'contacts' %}" class="navbar__links" id="about_page">Contact us</a>
+           </li>
+
+           {% if user.is_authenticated %}  
+           <li class="navbar__item">
+               <a  href="{% url 'logout' %}" class="navbar__links">Logout</a>
+               
+               </li>
+           
+               {% else %}
+               <li class="navbar__item">
+                   <a  href="{% url 'login' %}" class="navbar__links">Login</a>
+                   
+                   </li>
+               {% endif %}
+
+    </ul>
+</div>
+</nav>
+
+<br>
+
+ <div class= "container_A">
+  <center>
+    <h1 >Available  Buses </h1>
+   </center>
+ 
+
+   
+     {% block content %}
+      
+     {% for Routes in buses  %}  
+     {% for Routes in ends %} 
+     {% for Assigntrip in dates %}
+    
+    <div class="shadow p-4 mb-5 bg-body rounded">
+            <div class="card">
+           <div class="card-header">
+        
+             <h5 class="card-title">  {{Routes.froms}} <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+            </svg>{{Routes.destination}}</h5>
+          
+            <p class="card-text">                      
+           </div>
+           <div class="card-body">
+           <ul>
+
+           <li>Bus Name: {{Assigntrip.bus.busname }} </li>
+           <li>Bus Class: {{Assigntrip.bus.busclass }} </li>
+           <li> Plate Number: {{Assigntrip.bus.busnumber}} </li>
+           <li> Depature Time: {{Assigntrip.travel_time }} </li>
+           <li> Bus Fare: {{Assigntrip.route.price  }} </li>
+           </ul>
+     
+        
+           </p>
+           <a href="{% url 'seats' %}" class="btn btn-primary">Book Seats</a>
+           </div>
+           </div>
+
+
+
+           </div>
+          </div> 
+     
+          {% endfor %} 
+          {% endfor %} 
+          {% endfor %} 
+     
+
+      
+     {% endblock %}
+
+       
+ 
+ </div>
+
+    <script src="{% static 'styling.js'%}"></script>
+    <script src="{% static 'script.js'%}"></script>
+</body>
+</html>

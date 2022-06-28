@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.builder.io/js/webcomponents"></script>
+  <builder-component model="page" api-key="YOUR_API_KEY"></builder-component>
+
+        <link rel="stylesheet" type="text/css" href="stletsts.css" />
+    </head>
+    <body>
+        <div class="div"></div>
+        <style>
+          .div {
+            display: flex;
+            max-width: 372px;
+            height: 59px;
+            width: 372px;
+            border-radius: 7px;
+            background-color: rgba(0, 188, 212, 1);
+          }
+        </style>
+        
+
+    </div>
+    </body>
+    </html> 

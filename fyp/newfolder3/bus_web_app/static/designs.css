@@ -1,0 +1,419 @@
+ body{  
+   text-align: right;
+  background:#f4f4f4;
+   
+   margin:20px auto;
+   
+   
+   
+   
+   ;}
+   /* .div1 { 
+    display: flex;
+    max-width: 372px;
+    height: 59px;
+    width: 372px;
+    border-radius: 7px;
+    background-color: rgba(0, 188, 212, 1);
+  }
+  */
+  /*.loginbtn{
+    text-align: center;
+    position: relative;
+    max-width: 372px;
+    height: 59px;
+    width: 372px;
+    left: 10px;
+    border-radius: 7px;
+    background-color: orangered;
+
+  }
+*/
+   h1{
+    text-align: center;
+   position: relative;
+   width: 259px;
+   height: 47px;
+  left: 550px;
+    top: 14px;
+
+    font-family: 'Kumbh Sans', sans-serif;
+   font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+   line-height: 47px;
+   /*
+  
+ }
+ p{ position: relative;
+  text-align: center;
+  padding: left 200px; ;
+  font-family: 'Kumbh Sans', sans-serif;
+   font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+   line-height: 47px;
+ }
+ form{
+  text-align: center;
+   position:relative;
+   width: 1000px;
+   padding-left: 200px ;
+ }
+
+.registerbtn{
+    text-align: center;
+    position: relative;
+    max-width: 372px;
+    height: 59px;
+    width: 372px;
+    left: 10px;
+    border-radius: 7px;
+    background-color: rgba(0, 188, 212, 1);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*form {
+position: absolute;
+width:100%;
+height: 100%;
+left: 0px;
+top: 0px;
+
+    background: #607D8B;}
+
+*h1 {
+position: absolute;
+width: 259px;
+height: 47px;
+left: 75px;
+top: 154px;
+
+font-family: 'Kumbh Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 47px;
+/* identical to box height */
+
+/*color: #000000;
+}
+
+/* Email 
+.username{
+position: relative;
+width: 45px;
+height: 21px;
+left: 35px;
+top: 259px;
+
+font-family: 'Kumbh Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+}
+
+/*color: #000000;
+.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+  /* 
+   Full-width inputs 
+  input[type=text], input[type=email] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+   box-sizing:content-box;
+  }
+
+
+  input[type=text], input[type=password] {
+      top: 10px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px dynamic #cccccc;
+   box-sizing:content-box;
+  }
+  
+  
+  /* Set a style for all buttons 
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons*/
+  button:hover {
+    opacity: 0.8;
+  } 
+  
+  /* Extra style for the cancel button (red) 
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+
+  /* Add padding to containers 
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens 
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+    /* Rectangle 1
+   .loginbtn {
+    text-align: center;
+position: relative;
+width: 414px;
+height: 896px;
+left: 0px;
+top: 0px;
+background: #607D8B;
+*/
+   
+
+  .site-form{
+    margin-top: 60px;
+    border: 1px solid orangered;
+    padding: 20px;
+
+  }
+
+  .site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+  }
+  .helptext, .helptext ul{
+    margin: 0 auto 20px;
+    color: #bbb;
+    font-size: 0.9rem;
+    display: block;
+
+  }
+  .errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #ff5722;
+    color: #ff5722;
+    margin: 10px 0;
+
+  }
+
+
+  .errorlist{
+    padding: 0;
+
+  }
+
+
+  .site-form input[type="submit"]{
+    background: #ff5722;
+    border: 0;
+    color: #fff;
+    font-size: 1.23em;
+    border-radius: 4px;
+    margin: 10px 0;
+  }

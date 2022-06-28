@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static  %}
+{% load bootstrap3 %}
+<html lang= "en">
+
+<head>
+   <meta charset="UTF-8">
+    <title>Login Page</title>
+
+   <link rel="stylesheet" type="text/css" href="{% static 'designs.css'%}"/> 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
+</head>
+
+<body>
+<div>
+  <center>
+  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+  </svg>
+</div>
+</center>
+
+   
+
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+  <center> <p class="fw-lighter">Login</p> </center>
+<form class="site-form" action= "/users/login/" method="post">
+  {% csrf_token %}
+  {{form}}
+  <input type="submit" value="Login">
+
+
+</form>
+
+<div style="padding-left: 30px;">
+  <a href="{% url 'signup' %}" >
+    <p id="p1">Not registered? Click here to Signup</p></div>
+  </div>
+</body>
+    
+</body>
+</html>

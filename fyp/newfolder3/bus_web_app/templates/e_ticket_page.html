@@ -1,0 +1,109 @@
+ 
+<!DOCTYPE html>
+{% load static  %}
+<html lang= "en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
+    <title>welcome page</title>
+    <script src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"></script>
+    <link rel="stylesheet" href="{% static 'design3.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+</head>
+
+<body class="other__pages">  
+ <!--Navbar-->
+    <nav class="navbar">
+     <div class="navbar__container"> 
+     <a href="#home" id="navbar__logo">TIKETI KIGANJANI</a>  
+     <div class="navbar__toggle"  id="mobile-menu"> 
+     <span class="bar"> </span>
+     <span class="bar"> </span>
+     <span class="bar"> </span>
+     <span class="bar"> </span>
+     </div>
+     <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="{% url 'home' %}" class="navbar__links" id="homepage">Home</a>
+            </li>
+    <!--<li class="navbar__item">
+                <a href="{% url 'payment' %}" class="navbar__links" id="ticket_page">Payments</a>
+            </li>
+            --> 
+
+            <li class="navbar__item">
+                <a href="{% url 'contacts' %}" class="navbar__links" id="about_page">Contact us</a>
+            </li>
+
+            {% if user.is_authenticated %}  
+            <li class="navbar__item">
+                
+                <a  href="{% url 'logout' %}" class="navbar__links" id="login_page">Logout</a>
+                
+                </li>
+            
+                {% else %}
+                <li class="navbar__item">
+                    <a  href="{% url 'login' %}" class="navbar__links">Login</a>
+                    
+                    </li>
+                {% endif %}
+     </ul>
+
+</div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<form autocomplete="off">
+    {% if braintree_error %}
+      <div class="alert alert-danger fade in">
+          <button class="close" data-dismiss="alert">&times;</button>
+          {{ braintree_error|safe }}
+      </div>
+    {% endif %}
+    <div class="braintree-notifications"></div>
+   
+<div id="dropin-container"></div>
+<button id="submit-button" class="button button--small button--green">Purchase Your Seat</button>
+  </form>
+<script src="{% static 'styling.js'%}"></script>
+<script>
+    $.getScript( "https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js", function() {   
+    var braintree_client_token = "{{ braintree_client_token }}";
+    var button = document.querySelector('#submit-button');
+
+    braintree.dropin.create({
+      authorization: braintree_client_token,
+      container: '#braintree-dropin',
+      card: {
+        cardholderName: {
+            required: false
+        }
+      }
+    }, function (createErr, instance) {
+        button.addEventListener('click', function () {
+            instance.requestPaymentMethod(function (err, payload) {
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "bus_catalog:payment" pk=user.id %}',
+                    data: {
+                        'paymentMethodNonce': payload.nonce,         
+                        amount: "30000",
+                        currency: "TZS",
+                        description: "Bus Fee",          
+                      }
+                }).done(function (result) {
+                   //do accordingly
+                });
+            });
+        });
+    }); });
+</script>
+</body>
+</html>
